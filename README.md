@@ -49,7 +49,7 @@ alembic init migrations
 ```bash
 sqlalchemy.url = postgresql://user:password1234@127.0.0.1:5435/leave_db
 ```
-- Дальше в папке с миграциями и открыть env.py, там вносим следующие изменения:
+- Дальше в папке с миграциями открыть env.py, вносим изменения в target_metadata:
 
 ```bash
 from db.models import Base
@@ -75,7 +75,7 @@ alembic upgrade heads
 ```bash
 sqlalchemy.url = postgresql://postgres_test:postgres_test@127.0.0.1:5436/postgres_test
 ```
-- Дальше в папке с миграциями и открыть env.py, там вносим следующие изменения:
+- Дальше в папке с миграциями открыть env.py, вносим изменения в target_metadata:
 
 ```bash
 from db.models import Base
@@ -83,7 +83,7 @@ from db.models import Base
 target_metadata = Base.metadata
 #target_metadata = None
 ```
-После этого можно повторно запускать тесты.
+После этого можно сразу повторно запускать тесты.
 
 ## API Методы
 
